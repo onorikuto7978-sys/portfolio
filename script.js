@@ -53,16 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            const tiltX = ((y - centerY) / centerY) * -8; // 最大8度の傾き
-            const tiltY = ((x - centerX) / centerX) * 8;
+            const tiltX = ((y - centerY) / centerY) * -15; // 最大15度の激しい傾き
+            const tiltY = ((x - centerX) / centerX) * 15;
             
-            card.style.transform = `translateY(-10px) scale(1.02) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-            card.style.transition = 'transform 0.1s ease, box-shadow 0.4s ease'; // マウス追従は素早く
+            card.style.transform = `translateY(-15px) scale(1.05) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+            card.style.transition = 'transform 0.1s ease, box-shadow 0.1s ease'; // マウス追従は素早く
         });
         
         card.addEventListener('mouseleave', () => {
              card.style.transform = `translateY(0) scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg)`;
-             card.style.transition = 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)'; // 戻るときは滑らかに
+             card.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)'; // ビヨンと跳ねるような戻り方
         });
     });
 
